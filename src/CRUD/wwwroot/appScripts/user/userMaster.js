@@ -7,21 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-//import {UserControl} from './user/userMaster';
-var userProfile_1 = require('./user/userProfile');
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require("angular2/core");
+var userList_1 = require("./userList");
+var userProfile_1 = require("./userProfile");
+var UserControl = (function () {
+    function UserControl() {
     }
-    AppComponent = __decorate([
+    UserControl = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            directives: [userProfile_1.UserProfile],
-            template: 'My First custom component like <user-profile></user-profile>'
+            directives: [userList_1.UserList, userProfile_1.UserProfile]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UserControl);
+    return UserControl;
 })();
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.js.map
+exports.UserControl = UserControl;
+//# sourceMappingURL=userMaster.js.map

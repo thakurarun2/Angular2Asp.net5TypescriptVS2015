@@ -8,20 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-//import {UserControl} from './user/userMaster';
-var userProfile_1 = require('./user/userProfile');
-var AppComponent = (function () {
-    function AppComponent() {
+var common_1 = require('./../common');
+var UserProfile = (function () {
+    function UserProfile() {
     }
-    AppComponent = __decorate([
+    UserProfile = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            directives: [userProfile_1.UserProfile],
-            template: 'My First custom component like <user-profile></user-profile>'
+            selector: "user-profile",
+            templateUrl: common_1.Common.Template.GetUrl("user/templates/user-form.component.html")
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UserProfile);
+    return UserProfile;
 })();
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.js.map
+exports.UserProfile = UserProfile;
+//# sourceMappingURL=userProfile.js.map

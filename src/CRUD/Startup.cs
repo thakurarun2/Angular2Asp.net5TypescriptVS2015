@@ -6,6 +6,10 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNet.Routing;
+using Microsoft.AspNet.Routing.Template;
+using Microsoft.AspNet.StaticFiles;
+using Microsoft.AspNet.FileProviders;
 
 namespace CRUD
 {
@@ -15,6 +19,7 @@ namespace CRUD
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRouting();
             // Add the platform handler to the request pipeline.
         }
 
@@ -25,6 +30,17 @@ namespace CRUD
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            
+            var routeBuilder = new RouteBuilder();
+            routeBuilder.ServiceProvider = app.ApplicationServices;
+
+            routeBuilder.Routes.Add(new TemplateRoute(
+                new TemplateRouter(),
+                "gettemplate/url={url}",
+                app.ApplicationServices.GetService<IInlineConstraintResolver>()));
+
+            app.UseRouter(routeBuilder.Build());
+
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync("Hello World!");
