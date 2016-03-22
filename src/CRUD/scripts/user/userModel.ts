@@ -4,6 +4,6 @@
         public firstName: string,
         public lastName: string,
         public isActive: boolean,
-        public sex?: string
+        public sex: string
     ) { }
 }

@@ -1,6 +1,10 @@
 ﻿import {Component} from "angular2/core";
+import {UserModel} from './UserModel';
+import {TemplateUrl} from './../common';
 @Component({
     selector: "user-list",
-    template:"<div>Here you will see user list</div>"
+    templateUrl: TemplateUrl("user/templates/user-list.component.html")
 })
-export class UserList { }
+export class UserList {
+
+}

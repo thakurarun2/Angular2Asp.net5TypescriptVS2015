@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <h1>User Form</h1>
-    <form>
+    <form  (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" required
@@ -12,6 +12,18 @@
             <input type="text" class="form-control" required
                    [(ngModel)]="model.lastName">
         </div>
+        <div class="form-group">
+            <label for="isActive">Active User</label>
+            <input type="checkbox" class="form-control"
+                   [(ngModel)]="model.isActive">
+        </div>
+        <div class="form-group">
+            <label for="sex">Sex</label>
+            <select class="form-control" [(ngModel)]="model.sex">
+                <option *ngFor="#value of sexList" [value]="value">{{value}}</option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
+{{diagnostic}}

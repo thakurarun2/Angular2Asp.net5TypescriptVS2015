@@ -9,4 +9,4 @@ var UserModel = (function () {
     return UserModel;
 })();
 exports.UserModel = UserModel;
-//# sourceMappingURL=userModel.js.map
+//# sourceMappingURL=UserModel.js.map

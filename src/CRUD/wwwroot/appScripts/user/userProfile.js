@@ -8,14 +8,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var UserModel_1 = require('./UserModel');
 var common_1 = require('./../common');
 var UserProfile = (function () {
     function UserProfile() {
+        this.model = new UserModel_1.UserModel(0, '', '', true, 'Male');
+        this.sexList = ['Female', 'Male', 'Not Decided'];
     }
+    UserProfile.prototype.onSubmit = function (event) {
+        console.log(JSON.stringify(this.model));
+    };
+    Object.defineProperty(UserProfile.prototype, "diagnostic", {
+        // TODO: Remove this when we're done
+        get: function () { return JSON.stringify(this.model); },
+        enumerable: true,
+        configurable: true
+    });
     UserProfile = __decorate([
         core_1.Component({
             selector: "user-profile",
-            templateUrl: common_1.Common.Template.GetUrl("user/templates/user-form.component.html")
+            templateUrl: common_1.TemplateUrl("user/templates/user-form.component.html")
         }), 
         __metadata('design:paramtypes', [])
     ], UserProfile);

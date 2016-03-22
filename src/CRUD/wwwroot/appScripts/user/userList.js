@@ -8,13 +8,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("angular2/core");
+var common_1 = require('./../common');
 var UserList = (function () {
     function UserList() {
     }
     UserList = __decorate([
         core_1.Component({
             selector: "user-list",
-            template: "<div>Here you will see user list</div>"
+            templateUrl: common_1.TemplateUrl("user/templates/user-list.component.html")
         }), 
         __metadata('design:paramtypes', [])
     ], UserList);

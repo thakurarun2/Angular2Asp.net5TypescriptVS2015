@@ -1,9 +1,11 @@
 ﻿import {Component} from 'angular2/core';
-//import {UserControl} from './user/userMaster';
-import {UserProfile} from './user/userProfile';
+import {UserList} from "./user/userList";
+import {UserProfile} from "./user/userProfile";
+import {TemplateUrl} from './common';
+
 @Component({
     selector: 'my-app',
-    directives: [ UserProfile],
-    template: 'My First custom component like <user-profile></user-profile>'
+    directives: [UserProfile, UserList],
+    templateUrl: TemplateUrl('user-content.component.html')
 })
 export class AppComponent { }

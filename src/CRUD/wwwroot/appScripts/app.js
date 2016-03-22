@@ -8,16 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-//import {UserControl} from './user/userMaster';
-var userProfile_1 = require('./user/userProfile');
+var userList_1 = require("./user/userList");
+var userProfile_1 = require("./user/userProfile");
+var common_1 = require('./common');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [userProfile_1.UserProfile],
-            template: 'My First custom component like <user-profile></user-profile>'
+            directives: [userProfile_1.UserProfile, userList_1.UserList],
+            templateUrl: common_1.TemplateUrl('user-content.component.html')
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

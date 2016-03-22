@@ -1,13 +1,12 @@
-var Common;
-(function (Common) {
-    var Template = (function () {
-        function Template() {
-        }
-        Template.GetUrl = function (url) {
-            return "gettemplate/url=" + encodeURIComponent(url);
-        };
-        return Template;
-    })();
-    Common.Template = Template;
-})(Common = exports.Common || (exports.Common = {}));
+//export module Common {
+//    export class Template {
+//        static GetUrl(url) {
+//            return "gettemplate/url=" + encodeURIComponent(url);
+//        }
+//    }
+//}
+function TemplateUrl(url) {
+    return "gettemplate/url=" + encodeURIComponent(url);
+}
+exports.TemplateUrl = TemplateUrl;
 //# sourceMappingURL=common.js.map
