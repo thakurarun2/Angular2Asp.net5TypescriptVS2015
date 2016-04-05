@@ -8,10 +8,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("angular2/core");
+var UserModel_1 = require('./UserModel');
 var common_1 = require('./../common');
 var UserList = (function () {
     function UserList() {
+        this.selectionChange = new core_1.EventEmitter();
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], UserList.prototype, "users", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', UserModel_1.UserModel)
+    ], UserList.prototype, "selectedUser", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], UserList.prototype, "selectionChange", void 0);
     UserList = __decorate([
         core_1.Component({
             selector: "user-list",

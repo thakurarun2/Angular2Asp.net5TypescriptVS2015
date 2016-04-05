@@ -12,11 +12,13 @@ var UserModel_1 = require('./UserModel');
 var common_1 = require('./../common');
 var UserProfile = (function () {
     function UserProfile() {
+        this.addUser = new core_1.EventEmitter();
         this.model = new UserModel_1.UserModel(0, '', '', true, 'Male');
         this.sexList = ['Female', 'Male', 'Not Decided'];
     }
     UserProfile.prototype.onSubmit = function (event) {
-        console.log(JSON.stringify(this.model));
+        //here i want to update the list in just one click.
+        //question is how to do that ?
     };
     Object.defineProperty(UserProfile.prototype, "diagnostic", {
         // TODO: Remove this when we're done
@@ -24,6 +26,10 @@ var UserProfile = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], UserProfile.prototype, "addUser", void 0);
     UserProfile = __decorate([
         core_1.Component({
             selector: "user-profile",

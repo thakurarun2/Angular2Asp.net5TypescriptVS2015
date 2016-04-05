@@ -7,20 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var userBrowser_1 = require("./user/userBrowser");
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require("angular2/core");
+var userList_1 = require("./userList");
+var userProfile_1 = require("./userProfile");
+var UserBrowser = (function () {
+    function UserBrowser() {
     }
-    AppComponent = __decorate([
+    UserBrowser = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            directives: [userBrowser_1.UserBrowser],
-            template: '<user-browser></user-browser>'
+            selector: 'user-browser',
+            directives: [userList_1.UserList, userProfile_1.UserProfile],
+            template: ''
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UserBrowser);
+    return UserBrowser;
 })();
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.js.map
+exports.UserBrowser = UserBrowser;
+//# sourceMappingURL=userBrowser.js.map
